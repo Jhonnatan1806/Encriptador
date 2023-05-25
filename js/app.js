@@ -29,35 +29,39 @@ const decrypt = (mensaje) => {
         .replace(/ufat/g, "u");
 };
 
-const updateTitleResult = (text) => {
-    const titleResult = document.getElementById("title-result");
-    titleResult.textContent = text;
-    titleResult.classList.add("left-text");
+const updateResult = (text) => {
+    const messageResult = document.querySelector(".result__message");
+    messageResult.textContent = text;
+    messageResult.classList.add("result__message--encrypted");
 };
 
 const removeItems = () => {
-    const messageResult = document.getElementById("message-result");
-    const imageResult = document.getElementById("img-result");
-    messageResult.classList.add("hidden");
+    const result = document.querySelector(".result");
+    const imageResult = document.querySelector(".result__img");
+    const titleResult = document.querySelector(".result__title");
+    const btnCopy = document.getElementById("btn-copy");
+    result.classList.add("justify-start");
+    titleResult.classList.add("hidden");
     imageResult.classList.add("hidden");
+    btnCopy.classList.remove("hidden");
 };
 
 const handleEncrypt = () => {
     const message = document.getElementById("input").value;
     const encryptedMessage = encrypt(message);
-    updateTitleResult(encryptedMessage);
+    updateResult(encryptedMessage);
     removeItems();
 };
 
 const handleDecrypt = () => {
     const message = document.getElementById("input").value;
     const decryptedMessage = decrypt(message);
-    updateTitleResult(decryptedMessage);
+    updateResult(decryptedMessage);
     showErrorMessage();
 };
 
 const copyText = () => {
-    const titleResult = document.getElementById("title-result");
+    const titleResult = document.querySelector("result__title");
     const tempTextArea = document.createElement("textarea");
     tempTextArea.value = titleResult.textContent;
     document.body.appendChild(tempTextArea);
