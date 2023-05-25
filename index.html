@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Challenge One Encripador de Texto">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Encripador de Texto</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="header">
+    <a href="#" class="header__logo"> <img src="/img/logo.svg" alt="Logo"/></a>
+</header>
+<main class="main">
+    <div class="container-input">
+        <textarea id="input" class="input" name="text" rows="12" placeholder="Ingrese el texto aquí"></textarea>
+        <div class="notice">
+            <img src="/img/exclamation.svg" alt="icono de exclamación" class="notice__icon">
+            <p class="notice__text">Solo letras minúsculas y sin acentos</p>
+        </div>
+        <div class="group-button">
+            <button id="btn-encrypt" class="button button__primary" type="button">Encriptar</button>
+            <button id="btn-decrypt" class="button button__secondary" type="button">Desencriptar</button>
+        </div>
+    </div>
+    <div class="container-result">
+        <img id="img-result" src="/img/Muñeco.png" alt="Ningún mensaje fue encontrado" class="result__image">
+        <p id="title-result" class="result__title">Ningún mensaje fue encontrado</p>
+        <p id="message-result" class="result__message">Ingresa el texto que desees encriptar o desencriptar.</p>
+        <div class="absolute-container">
+            <button id="btn-copy" class="button button__secondary" type="button">Copiar</button>
+        </div>
+    </div>
+</main>
+<script src="/js/app.js" type="module"></script>
+</body>
+</html>
