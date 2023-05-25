@@ -61,7 +61,7 @@ const handleDecrypt = () => {
 };
 
 const copyText = () => {
-    const titleResult = document.querySelector("result__title");
+    const titleResult = document.querySelector(".result__message");
     const tempTextArea = document.createElement("textarea");
     tempTextArea.value = titleResult.textContent;
     document.body.appendChild(tempTextArea);
