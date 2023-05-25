@@ -57,7 +57,7 @@ const handleDecrypt = () => {
     const message = document.getElementById("input").value;
     const decryptedMessage = decrypt(message);
     updateResult(decryptedMessage);
-    showErrorMessage();
+    removeItems();
 };
 
 const copyText = () => {
